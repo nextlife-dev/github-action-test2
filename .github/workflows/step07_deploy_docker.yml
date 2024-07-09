@@ -65,8 +65,8 @@ jobs:
           script: |
             docker stop $(docker ps -a -q)
             docker rm $(docker ps -a -q)
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/github-action-docker
-            docker run -d -p 8080:8080 --name github-action-backend ${{ secrets.DOCKERHUB_USERNAME }}/github-action-docker
+            docker pull dockerlecture/github-action-docker
+            docker run -d -p 8080:8080 --name github-action-backend dockerlecture/github-action-docker
             docker system prune -f
           
         
